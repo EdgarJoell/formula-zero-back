@@ -28,6 +28,10 @@ public class User {
     @Column
     private String favoriteDriver;
 
+    @ManyToOne
+    @JoinColumn(name = "experience_id")
+    private Experience experience;
+
     public User() {
     }
 

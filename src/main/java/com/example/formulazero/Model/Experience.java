@@ -1,6 +1,9 @@
 package com.example.formulazero.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "experiences")
@@ -24,6 +27,10 @@ public class Experience {
 
     @Column
     private String car;
+
+    @OneToMany(mappedBy = "experience")
+    @JsonIgnore
+    private List<User> userList;
 
     public Experience() {
     }
