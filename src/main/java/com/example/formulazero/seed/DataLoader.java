@@ -1,5 +1,6 @@
 package com.example.formulazero.seed;
 
+import com.example.formulazero.Model.Experience;
 import com.example.formulazero.Repository.ExperienceRepository;
 import com.example.formulazero.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
