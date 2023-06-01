@@ -35,9 +35,10 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(Long id, String trackName, double price) {
+    public Experience(Long id, String trackName, String date, double price) {
         this.id = id;
         this.trackName = trackName;
+        this.date = date;
         this.price = price;
     }
 
