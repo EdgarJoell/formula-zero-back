@@ -36,6 +36,11 @@ public class ExperienceService {
         return experienceRepository.findById(experienceId);
     }
 
+    /**
+     * Provides a list of the participants for a certain Experience.
+     * @param experienceId The ID to search for the Experience.
+     * @return A list of the names of people that will be attending that Experience.
+     */
     public List<User> getExperienceParticipants(Long experienceId) {
         Optional<Experience> experience = experienceRepository.findById(experienceId);
         if(experience.get().getUserList().isEmpty()) {

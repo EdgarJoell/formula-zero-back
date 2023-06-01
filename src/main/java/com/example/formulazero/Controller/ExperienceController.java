@@ -41,6 +41,11 @@ public class ExperienceController {
         return experienceService.getExperience(experienceId);
     }
 
+    /**
+     * Provides a list of the participants for a certain Experience.
+     * @param experienceId The ID to search for the Experience.
+     * @return A list of the names of people that will be attending that Experience.
+     */
     @GetMapping(path = "/experience-participants/{experienceId}")
     public List<User> getExperienceParticipants(@PathVariable Long experienceId) {
         return experienceService.getExperienceParticipants(experienceId);
