@@ -32,7 +32,11 @@ public class DataLoader implements CommandLineRunner {
             experienceRepository.save(monza);
 
             User edgar = new User(1L, "edgar@edgar.com", "password", "Edgar Z");
+
             edgar.setExperience(monaco);
+
+            userRepository.save(edgar);
+//            monaco.addUser(edgar);
         }
     }
 }
