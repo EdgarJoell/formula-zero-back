@@ -30,6 +30,8 @@ public class DataLoader implements CommandLineRunner {
             experienceRepository.save(silverstone);
             experienceRepository.save(monaco);
             experienceRepository.save(monza);
+
+            User edgar = new User()
         }
     }
 }
