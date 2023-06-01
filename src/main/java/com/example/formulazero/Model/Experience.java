@@ -35,6 +35,22 @@ public class Experience {
     public Experience() {
     }
 
+    public Experience(Long id, String trackName, double price) {
+        this.id = id;
+        this.trackName = trackName;
+        this.price = price;
+    }
+
+    public Experience(Long id, String trackName, String date, double price, String time, String car, List<User> userList) {
+        this.id = id;
+        this.trackName = trackName;
+        this.date = date;
+        this.price = price;
+        this.time = time;
+        this.car = car;
+        this.userList = userList;
+    }
+
     public Long getId() {
         return id;
     }
