@@ -1,6 +1,5 @@
 package com.example.formulazero;
 
-import com.example.formulazero.Model.User;
 import com.example.formulazero.Service.ExperienceService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

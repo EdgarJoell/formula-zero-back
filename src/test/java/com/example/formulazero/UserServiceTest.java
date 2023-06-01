@@ -16,6 +16,6 @@ public class UserServiceTest {
     @DisplayName("Should create a new user")
     public void shouldCreateANewUser() {
         User newUser = new User(4L, "hellohey@gmail.com", "password", "Gio Dani");
-        userService.createNewUser(newUser);
+        userService.registerNewUser(newUser);
     }
 }
