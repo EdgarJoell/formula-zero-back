@@ -100,6 +100,14 @@ public class Experience {
         this.car = car;
     }
 
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
     @Override
     public String toString() {
         return "Experience{" +
