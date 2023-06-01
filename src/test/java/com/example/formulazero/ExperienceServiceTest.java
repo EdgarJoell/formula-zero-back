@@ -22,4 +22,10 @@ public class ExperienceServiceTest {
     public final void getOneExperienceById() {
         experienceService.getExperience(2L);
     }
+
+    @Test
+    @DisplayName("Get Experience participant list")
+    public final void getExperienceParticipantList() {
+        experienceService.getExperienceParticipants(2L);
+    }
 }
