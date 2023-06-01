@@ -15,6 +15,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Creates a new User and saves the user to database.
+     * @param userObject The information being used to create the user,
+     * @return A newly created User.
+     */
     public User registerNewUser(User userObject) {
         if(userObject.getEmail().equals(userRepository.findByEmail(userObject.getEmail()))) {
             throw new InformationExistsException("A user with this email already exists. Please use a different on.");

@@ -16,6 +16,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * Creates a user using the UserService class.
+     * @param userObject The information being used to create the user.
+     * @return A new User created.
+     */
     @PostMapping(path = "/register/")
     @ResponseStatus(HttpStatus.CREATED)
     public User registerNewUser(@RequestBody User userObject) {
