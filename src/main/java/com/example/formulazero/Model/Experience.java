@@ -1,6 +1,8 @@
 package com.example.formulazero.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,8 +30,9 @@ public class Experience {
     @Column
     private String car;
 
-    @OneToMany(mappedBy = "experience")
+    @OneToMany(mappedBy = "experience", orphanRemoval = true)
     @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<User> userList;
 
     public Experience() {
