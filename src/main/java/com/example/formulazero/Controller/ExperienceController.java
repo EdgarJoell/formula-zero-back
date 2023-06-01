@@ -1,6 +1,7 @@
 package com.example.formulazero.Controller;
 
 import com.example.formulazero.Model.Experience;
+import com.example.formulazero.Model.User;
 import com.example.formulazero.Service.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +34,10 @@ public class ExperienceController {
     @GetMapping(path = "/experiences/{experienceId}/")
     public Optional<Experience> getExperience(@PathVariable Long experienceId) {
         return experienceService.getExperience(experienceId);
+    }
+
+    @GetMapping(path = "/experience-participants/{experienceId}")
+    public List<User> getExperienceParticipants(@PathVariable Long experienceId) {
+        return experienceService.getExperienceParticipants(experienceId);
     }
 }
