@@ -19,6 +19,10 @@ public class ExperienceController {
         this.experienceService = experienceService;
     }
 
+    /**
+     * Uses the experienceService variable to call the business side of the method getAllExperiences().
+     * @return A list of all the Experiences available.
+     */
     @GetMapping(path = "/experiences/")
     public List<Experience> getAllExperiences() {
         return experienceService.getAllExperiences();

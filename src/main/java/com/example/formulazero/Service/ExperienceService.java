@@ -16,6 +16,10 @@ public class ExperienceService {
         this.experienceRepository = experienceRepository;
     }
 
+    /**
+     * Gets all Experiences available.
+     * @return A list of all the Experiences.
+     */
     public List<Experience> getAllExperiences() {
         return experienceRepository.findAll();
     }
