@@ -12,4 +12,10 @@ public class ExperienceServiceTest {
     public final void getAListOfAllExperiences() {
         experienceService.getAllExperiences();
     }
+
+    @Test
+    @DisplayName("Get One Experience By Id")
+    public final void getOneExperienceById() {
+        experienceService.getExperience(2);
+    }
 }
