@@ -21,6 +21,8 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void loadUserData() {
+        Experience silverstone = new Experience(1L, "Silverstone", 2499.99);
 
+        experienceRepository.save(silverstone);
     }
 }
