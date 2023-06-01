@@ -3,8 +3,12 @@ package com.example.formulazero;
 import com.example.formulazero.Service.ExperienceService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class ExperienceServiceTest {
+    @Autowired
     private ExperienceService experienceService;
 
     @Test
@@ -16,6 +20,6 @@ public class ExperienceServiceTest {
     @Test
     @DisplayName("Get One Experience By Id")
     public final void getOneExperienceById() {
-        experienceService.getExperience(2);
+        experienceService.getExperience(2L);
     }
 }

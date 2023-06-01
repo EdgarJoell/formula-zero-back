@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExperienceService {
@@ -22,5 +23,9 @@ public class ExperienceService {
      */
     public List<Experience> getAllExperiences() {
         return experienceRepository.findAll();
+    }
+
+    public Optional<Experience> getExperience(Long experienceId) {
+        return experienceRepository.findById(experienceId);
     }
 }
