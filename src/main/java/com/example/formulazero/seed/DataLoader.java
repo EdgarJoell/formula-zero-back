@@ -22,7 +22,11 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadUserData() {
         Experience silverstone = new Experience(1L, "Silverstone", 2499.99);
+        Experience monaco = new Experience(2L, "Monaco", 3299.99);
+        Experience monza = new Experience(3L, "Monza", 10000.00);
 
         experienceRepository.save(silverstone);
+        experienceRepository.save(monaco);
+        experienceRepository.save(monza);
     }
 }
