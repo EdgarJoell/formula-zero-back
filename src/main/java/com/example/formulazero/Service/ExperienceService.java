@@ -27,6 +27,11 @@ public class ExperienceService {
         return experienceRepository.findAll();
     }
 
+    /**
+     * Searches for one Experience by their ID.
+     * @param experienceId The ID being used to search for an Experience.
+     * @return The Experience if the ID was matched.
+     */
     public Optional<Experience> getExperience(Long experienceId) {
         return experienceRepository.findById(experienceId);
     }

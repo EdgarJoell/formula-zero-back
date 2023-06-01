@@ -31,6 +31,11 @@ public class ExperienceController {
         return experienceService.getAllExperiences();
     }
 
+    /**
+     * Searches for an Experience by the ID.
+     * @param experienceId The ID being used to search for an Experience.
+     * @return An Experience if the ID was matched.
+     */
     @GetMapping(path = "/experiences/{experienceId}/")
     public Optional<Experience> getExperience(@PathVariable Long experienceId) {
         return experienceService.getExperience(experienceId);
