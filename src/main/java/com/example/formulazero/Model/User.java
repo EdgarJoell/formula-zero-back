@@ -98,6 +98,14 @@ public class User {
         this.favoriteDriver = favoriteDriver;
     }
 
+    public Experience getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Experience experience) {
+        this.experience = experience;
+    }
+
     @Override
     public String toString() {
         return "User{" +
