@@ -10,6 +10,6 @@ public class ExperienceServiceTest {
     @Test
     @DisplayName("Get a list of all Experiences")
     public final void getAListOfAllExperiences() {
-        experienceService.getExperiences();
+        experienceService.getAllExperiences();
     }
 }

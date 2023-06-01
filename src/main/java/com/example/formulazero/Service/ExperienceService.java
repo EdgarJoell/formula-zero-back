@@ -1,8 +1,11 @@
 package com.example.formulazero.Service;
 
+import com.example.formulazero.Model.Experience;
 import com.example.formulazero.Repository.ExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ExperienceService {
@@ -11,5 +14,9 @@ public class ExperienceService {
     @Autowired
     public void setExperienceRepository(ExperienceRepository experienceRepository) {
         this.experienceRepository = experienceRepository;
+    }
+
+    public List<Experience> getAllExperiences() {
+        return experienceRepository.findAll();
     }
 }
