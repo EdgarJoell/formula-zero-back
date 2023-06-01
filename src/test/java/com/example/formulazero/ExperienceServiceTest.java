@@ -1,5 +1,6 @@
 package com.example.formulazero;
 
+import com.example.formulazero.Model.User;
 import com.example.formulazero.Service.ExperienceService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,5 +28,12 @@ public class ExperienceServiceTest {
     @DisplayName("Get Experience participant list")
     public final void getExperienceParticipantList() {
         experienceService.getExperienceParticipants(2L);
+    }
+
+    @Test
+    @DisplayName("Should create a new user")
+    public void shouldCreateANewUser() {
+        User newUser = new User(4L, "hellohey@gmail.com", "password", "Gio Dani");
+        experienceService.createNewUser(newUser);
     }
 }
