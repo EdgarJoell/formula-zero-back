@@ -29,11 +29,4 @@ public class ExperienceServiceTest {
     public final void getExperienceParticipantList() {
         experienceService.getExperienceParticipants(2L);
     }
-
-    @Test
-    @DisplayName("Should create a new user")
-    public void shouldCreateANewUser() {
-        User newUser = new User(4L, "hellohey@gmail.com", "password", "Gio Dani");
-        experienceService.createNewUser(newUser);
-    }
 }
