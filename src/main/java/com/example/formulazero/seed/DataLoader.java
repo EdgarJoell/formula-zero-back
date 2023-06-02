@@ -1,6 +1,7 @@
 package com.example.formulazero.seed;
 
 import com.example.formulazero.Model.Experience;
+import com.example.formulazero.Model.User;
 import com.example.formulazero.Repository.ExperienceRepository;
 import com.example.formulazero.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,21 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void loadUserData() {
-        Experience silverstone = new Experience(1L, "Silverstone", 2499.99);
+        if (experienceRepository.count() == 0 || userRepository.count() == 0) {
+            Experience silverstone = new Experience(1L, "Silverstone", "11-01-23", 2499.99);
+            Experience monaco = new Experience(2L, "Monaco", "09-20-23", 3299.99);
+            Experience monza = new Experience(3L, "Monza", "01-24-24", 10000.00);
 
-        experienceRepository.save(silverstone);
+            experienceRepository.save(silverstone);
+            experienceRepository.save(monaco);
+            experienceRepository.save(monza);
+
+            User edgar = new User(1L, "edgar@edgar.com", "password", "Edgar Z");
+
+            edgar.setExperience(monaco);
+
+            userRepository.save(edgar);
+//            monaco.addUser(edgar);
+        }
     }
 }

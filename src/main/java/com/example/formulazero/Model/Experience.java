@@ -1,6 +1,8 @@
 package com.example.formulazero.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,16 +30,18 @@ public class Experience {
     @Column
     private String car;
 
-    @OneToMany(mappedBy = "experience")
+    @OneToMany(mappedBy = "experience", orphanRemoval = true)
     @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<User> userList;
 
     public Experience() {
     }
 
-    public Experience(Long id, String trackName, double price) {
+    public Experience(Long id, String trackName, String date, double price) {
         this.id = id;
         this.trackName = trackName;
+        this.date = date;
         this.price = price;
     }
 
@@ -97,6 +101,14 @@ public class Experience {
 
     public void setCar(String car) {
         this.car = car;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
     @Override

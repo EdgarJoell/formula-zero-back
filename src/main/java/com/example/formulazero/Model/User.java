@@ -35,6 +35,13 @@ public class User {
     public User() {
     }
 
+    public User(Long id, String email, String password, String name) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
@@ -89,6 +96,14 @@ public class User {
 
     public void setFavoriteDriver(String favoriteDriver) {
         this.favoriteDriver = favoriteDriver;
+    }
+
+    public Experience getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Experience experience) {
+        this.experience = experience;
     }
 
     @Override
