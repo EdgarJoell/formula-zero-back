@@ -23,13 +23,20 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadUserData() {
         if (experienceRepository.count() == 0 || userRepository.count() == 0) {
-            Experience silverstone = new Experience(1L, "Silverstone", "11-01-23", 2499.99);
-            Experience monaco = new Experience(2L, "Monaco", "09-20-23", 3299.99);
-            Experience monza = new Experience(3L, "Monza", "01-24-24", 10000.00);
+            Experience silverstone = new Experience(1L, "Silverstone", "United Kingdom", "11-01-23", 2499.99, "../../../../assets/experience-page-images/Silverstone-RaceThumbnail.png");
+            Experience monaco = new Experience(2L, "Monaco", "France", "09-20-23", 3299.99, "../../../../assets/experience-page-images/Monaco-RaceThumbnail.png");
+            Experience monza = new Experience(3L, "Monza", "Italy",  "01-24-24", 10000.00, "../../../../assets/experience-page-images/Monza-RaceThumbnail.png");
+            Experience vegas = new Experience(4L, "Las Vegas", "United States", "01-24-24", 10000.00, "../../../../assets/experience-page-images/Vegas-RaceThumbnail.png");
+            Experience miami = new Experience(5L, "Miami", "United States", "01-24-24", 10000.00, "../../../../assets/experience-page-images/Miami-RaceThumbnail.png");
+            Experience marinaBay = new Experience(6L, "Marina Bay", "Singapore", "01-24-24", 10000.00, "../../../../assets/experience-page-images/Marina-RaceThumbnail.png");
 
             experienceRepository.save(silverstone);
             experienceRepository.save(monaco);
             experienceRepository.save(monza);
+            experienceRepository.save(vegas);
+            experienceRepository.save(miami);
+            experienceRepository.save(marinaBay);
+
 
             User edgar = new User(1L, "edgar@edgar.com", "password", "Edgar Z");
 

@@ -19,10 +19,16 @@ public class Experience {
     private String trackName;
 
     @Column
+    private String country;
+
+    @Column
     private String date;
 
     @Column
     private double price;
+
+    @Column
+    private String imageString;
 
     @Column
     private String time;
@@ -38,11 +44,13 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(Long id, String trackName, String date, double price) {
+    public Experience(Long id, String trackName, String country,  String date, double price, String imageString) {
         this.id = id;
         this.trackName = trackName;
+        this.country = country;
         this.date = date;
         this.price = price;
+        this.imageString = imageString;
     }
 
     public Experience(Long id, String trackName, String date, double price, String time, String car, List<User> userList) {
@@ -70,6 +78,14 @@ public class Experience {
     public void setTrackName(String trackName) {
         this.trackName = trackName;
     }
+
+    public String getCountry() { return country; }
+
+    public void setCountry(String country) { this.country = country; }
+
+    public String getImageString() { return imageString; }
+
+    public void setImageString(String imageString) { this.imageString = imageString; }
 
     public String getDate() {
         return date;
