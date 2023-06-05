@@ -41,6 +41,10 @@ public class Experience {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<User> userList;
 
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
+
     public Experience() {
     }
 
