@@ -39,7 +39,7 @@ public class ExperienceServiceTest {
         Experience updatedExperience = new Experience(20L, "Monaco", "France", "09-20-2023", 5699.99);
 
         updatedExperience.setCar("Red Bull Racing");
-        experienceService.updateExperience(updatedExperience, anExperience.getId());
+        experienceService.updateCarForExperience(updatedExperience, anExperience.getId());
         Optional<Experience> monacoExperience = experienceService.getExperience(2L);
         System.out.println(updatedExperience.getCar().equals(monacoExperience.get().getCar()));
     }

@@ -51,7 +51,7 @@ public class ExperienceService {
         }
     }
 
-    public Experience updateExperience(Experience experienceObject, Long experienceId) {
+    public Experience updateCarForExperience(Experience experienceObject, Long experienceId) {
         Optional<Experience> experience = experienceRepository.findById(experienceId);
         if (experience.isPresent()) {
             experience.get().setCar(experienceObject.getCar());

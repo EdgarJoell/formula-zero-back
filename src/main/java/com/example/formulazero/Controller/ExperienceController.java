@@ -50,6 +50,6 @@ public class ExperienceController {
 
     @PutMapping(path = "/update-experiences/{experienceId}/")
     public Experience updateExperience(@RequestBody Experience experienceObject, @PathVariable Long experienceId) {
-        return experienceService.updateExperience(experienceObject, experienceId);
+        return experienceService.updateCarForExperience(experienceObject, experienceId);
     }
 }
