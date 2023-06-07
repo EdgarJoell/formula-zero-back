@@ -49,7 +49,7 @@ public class ExperienceController {
     }
 
     @PutMapping(path = "/update-experiences/{experienceId}/")
-    public Experience updateExperience(@RequestBody Experience experienceObject, @PathVariable Long experienceId) {
-        return experienceService.updateCarForExperience(experienceObject, experienceId);
+    public Experience updateExperience(@RequestBody String newCar, @PathVariable Long experienceId) {
+        return experienceService.updateCarForExperience(newCar, experienceId);
     }
 }

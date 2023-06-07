@@ -1,6 +1,5 @@
 package com.example.formulazero.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -19,11 +18,14 @@ public class Cart {
     private int quantity;
 
     @OneToMany(mappedBy = "cart", orphanRemoval = true)
-    @JsonIgnore
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Experience> experienceList;
 
     public Cart() {
+    }
+
+    public Cart(Long id) {
+        this.id = id;
     }
 
     public Long getId() {

@@ -42,6 +42,7 @@ public class Experience {
     private List<User> userList;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
@@ -137,6 +138,14 @@ public class Experience {
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     @Override
