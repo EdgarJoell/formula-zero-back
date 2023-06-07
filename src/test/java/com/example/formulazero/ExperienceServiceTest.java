@@ -1,5 +1,6 @@
 package com.example.formulazero;
 
+import com.example.formulazero.Model.Experience;
 import com.example.formulazero.Service.ExperienceService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,5 +28,12 @@ public class ExperienceServiceTest {
     @DisplayName("Get Experience participant list")
     public final void getExperienceParticipantList() {
         experienceService.getExperienceParticipants(2L);
+    }
+
+    @Test
+    @DisplayName("Update an Experience")
+    public final void updateAnExperience() {
+        Experience updatedExperience = new Experience(2L, "Monaco", "France", "09-20-2023", 5699.99);
+        experienceService.updateExperience(updatedExperience, updatedExperience.getId());
     }
 }

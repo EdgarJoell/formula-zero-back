@@ -48,6 +48,14 @@ public class Experience {
     public Experience() {
     }
 
+    public Experience(Long id, String trackName, String country,  String date, double price) {
+        this.id = id;
+        this.trackName = trackName;
+        this.country = country;
+        this.date = date;
+        this.price = price;
+    }
+
     public Experience(Long id, String trackName, String country,  String date, double price, String imageString) {
         this.id = id;
         this.trackName = trackName;
