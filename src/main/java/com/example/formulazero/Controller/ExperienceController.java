@@ -4,10 +4,7 @@ import com.example.formulazero.Model.Experience;
 import com.example.formulazero.Model.User;
 import com.example.formulazero.Service.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,8 +43,13 @@ public class ExperienceController {
      * @param experienceId The ID to search for the Experience.
      * @return A list of the names of people that will be attending that Experience.
      */
-    @GetMapping(path = "/experience-participants/{experienceId}")
+    @GetMapping(path = "/experience-participants/{experienceId}/")
     public List<User> getExperienceParticipants(@PathVariable Long experienceId) {
         return experienceService.getExperienceParticipants(experienceId);
+    }
+
+    @PutMapping(path = "/update-experiences/{experienceId}/")
+    public Experience updateExperience(@RequestBody Experience experienceObject, @PathVariable Long experienceId) {
+        return experienceService.updateExperience(experienceObject, experienceId);
     }
 }
