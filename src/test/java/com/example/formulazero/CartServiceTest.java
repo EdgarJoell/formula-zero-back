@@ -17,5 +17,9 @@ public class CartServiceTest {
         cartService.getCartById(1L);
     }
 
-
+    @Test
+    @DisplayName("Add New Item To Cart")
+    public void addNewItemToCart() {
+        cartService.postCart(1L, 2L);
+    }
 }
