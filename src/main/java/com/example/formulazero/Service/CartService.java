@@ -34,8 +34,9 @@ public class CartService {
     public Cart postCart(Long cartId, Long experienceId) {
         Optional<Cart> cart = cartRepository.findById(cartId);
         Optional<Experience> experience = experienceRepository.findById(experienceId);
-        cart.get().getExperienceList().add(experience.get());
+//        cart.get().getExperienceList().add(experience.get());
         experience.get().setCart(cart.get());
+        experienceRepository.save(experience.get());
         return cart.get();
     }
 }

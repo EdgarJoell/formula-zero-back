@@ -51,10 +51,11 @@ public class ExperienceService {
         }
     }
 
-    public Experience updateCarForExperience(String newCar, Long experienceId) {
+    public Experience updateExperience(Experience newCar, Long experienceId) {
         Optional<Experience> experience = experienceRepository.findById(experienceId);
         if (experience.isPresent()) {
-            experience.get().setCar(newCar);
+            experience.get().setCar(newCar.getCar());
+            experience.get().setTime(newCar.getTime());
             return experienceRepository.save(experience.get());
         } else {
             throw new InformationNotFoundException("Experience with this ID does not exist");

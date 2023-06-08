@@ -42,8 +42,8 @@ public class DataLoader implements CommandLineRunner {
             Cart cart = new Cart(1L);
 
 
-            monza.setCart(cart);
-            vegas.setCart(cart);
+//            monza.setCart(cart);
+//            vegas.setCart(cart);
 
 //            ArrayList<Experience> list = new ArrayList<>();
 //            list.add(monza);
