@@ -14,9 +14,6 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private int quantity;
-
     @OneToMany(mappedBy = "cart", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Experience> experienceList;
@@ -36,14 +33,6 @@ public class Cart {
         this.id = id;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public List<Experience> getExperienceList() {
         return experienceList;
     }
@@ -56,7 +45,6 @@ public class Cart {
     public String toString() {
         return "Cart{" +
                 "id=" + id +
-                ", quantity=" + quantity +
                 ", experienceList=" + experienceList +
                 '}';
     }
