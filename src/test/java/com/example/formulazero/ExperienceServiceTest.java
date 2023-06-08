@@ -1,6 +1,7 @@
 package com.example.formulazero;
 
 import com.example.formulazero.Model.Experience;
+import com.example.formulazero.Repository.ExperienceRepository;
 import com.example.formulazero.Service.ExperienceService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,9 @@ import java.util.Optional;
 public class ExperienceServiceTest {
     @Autowired
     private ExperienceService experienceService;
+
+    @Autowired
+    private ExperienceRepository experienceRepository;
 
     @Test
     @DisplayName("Get a list of all Experiences")
@@ -35,12 +39,15 @@ public class ExperienceServiceTest {
     @Test
     @DisplayName("Update an Experience")
     public final void updateAnExperience() {
-        Experience anExperience = new Experience(2L, "Monaco", "France", "09-20-2023", 5699.99);
-        Experience updatedExperience = new Experience(20L, "Monaco", "France", "09-20-2023", 5699.99);
-//
-//        updatedExperience.setCar("Red Bull Racing");
-//        experienceService.updateCarForExperience(updatedExperience, anExperience.getId());
-//        Optional<Experience> monacoExperience = experienceService.getExperience(2L);
-//        System.out.println(updatedExperience.getCar().equals(monacoExperience.get().getCar()));
+        Experience experience = new Experience(10L, "Monaco", "France", "09-20-2023", 12999.99);
+        experience.setCar("Mercedes");
+
+        experienceService.updateExperience(experience, 2L);
+        Optional<Experience> experience1 = experienceRepository.findById(2L);
+        if (experience1.get().getCar().equals("Mercedes")) {
+            System.out.println("IT UPDATED");
+        } else {
+            System.out.println("It didn't update");
+        }
     }
 }

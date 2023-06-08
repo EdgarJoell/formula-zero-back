@@ -42,20 +42,20 @@ public class DataLoader implements CommandLineRunner {
             Cart cart = new Cart(1L);
 
 
-            monza.setCart(cart);
-            vegas.setCart(cart);
-
-            ArrayList<Experience> list = new ArrayList<>();
-            list.add(monza);
-            list.add(vegas);
-
-            cart.setExperienceList(list);
+//            monza.setCart(cart);
+//            vegas.setCart(cart);
+//
+//            ArrayList<Experience> list = new ArrayList<>();
+//            list.add(monza);
+//            list.add(vegas);
+//
+//            cart.setExperienceList(list);
 
 //            edgar.setExperience(monaco);
 
 //            userRepository.save(edgar);
 
-            cartRepository.save(cart);
+//            cartRepository.save(cart);
 
             experienceRepository.save(silverstone);
             experienceRepository.save(monaco);
