@@ -33,8 +33,13 @@ public class ExperienceService {
      * @param experienceId The ID being used to search for an Experience.
      * @return The Experience if the ID was matched.
      */
-    public Optional<Experience> getExperience(Long experienceId) {
-        return experienceRepository.findById(experienceId);
+    public Experience getExperience(Long experienceId) {
+        Optional<Experience> experience = experienceRepository.findById(experienceId);
+        if(experience.isPresent()) {
+            return experience.get();
+        } else {
+            throw new InformationNotFoundException("Experience with this ID does not exist.");
+        }
     }
 
     /**
