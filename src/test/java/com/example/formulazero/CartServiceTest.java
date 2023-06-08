@@ -22,4 +22,10 @@ public class CartServiceTest {
     public void addNewItemToCart() {
         cartService.postCart(1L, 2L);
     }
+
+    @Test
+    @DisplayName("Remove An Experience From Cart")
+    public void removeAnExperienceFromCart() {
+        cartService.removeExperienceFromCart(1L, 2L);
+    }
 }
