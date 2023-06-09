@@ -48,9 +48,9 @@ public class CartService {
      */
     public Cart postCart(Long cartId, Long experienceId) {
         Optional<Cart> cart = cartRepository.findById(cartId);
-        if(cart.isPresent()) {
+        if (cart.isPresent()) {
             Optional<Experience> experience = experienceRepository.findById(experienceId);
-            if(experience.isPresent()) {
+            if (experience.isPresent()) {
                 experience.get().setCart(cart.get());
                 experienceRepository.save(experience.get());
                 return cart.get();
