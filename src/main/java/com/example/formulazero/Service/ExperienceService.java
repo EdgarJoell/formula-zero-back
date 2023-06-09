@@ -56,6 +56,12 @@ public class ExperienceService {
         }
     }
 
+    /**
+     * Gets an experience by its ID and then updates the information for the Experience.
+     * @param newCar The JSON object holding the information to update.
+     * @param experienceId The ID needed to find the experience.
+     * @return The newly updated Experience.
+     */
     public Experience updateExperience(Experience newCar, Long experienceId) {
         Optional<Experience> experience = experienceRepository.findById(experienceId);
         if (experience.isPresent()) {

@@ -48,6 +48,12 @@ public class ExperienceController {
         return experienceService.getExperienceParticipants(experienceId);
     }
 
+    /**
+     * Gets an experience by its ID and then updates the information for the Experience.
+     * @param newCar The JSON object holding the information to update.
+     * @param experienceId The ID needed to find the experience.
+     * @return The newly updated Experience.
+     */
     @PutMapping(path = "/update-experiences/{experienceId}/")
     public Experience updateExperience(@RequestBody Experience newCar, @PathVariable Long experienceId) {
         return experienceService.updateExperience(newCar, experienceId);
