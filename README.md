@@ -20,7 +20,7 @@ The purpose of this side of the application is to provide the front-end half of 
 <br>
 
 ## Testing
-Completed with Cucumber and Rest Assured.
+Completed with Spring Boot class testing
 
 <br>
 
