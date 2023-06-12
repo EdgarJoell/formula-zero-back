@@ -61,4 +61,26 @@ public class CartService {
             throw new InformationNotFoundException("Cart with this ID was not found.");
         }
     }
+
+    /**
+     * Finds a Cart by its ID and the experience the user is removing by its ID and removes the Experience from the Cart
+     * @param cartId The ID needed to find the correct Cart and its contents
+     * @param experienceId The ID needed to find the correct Experience
+     * @return A newly updated Cart with the Experience removed
+     */
+    public Cart removeItemFromCart(long cartId, Long experienceId) {
+        Optional<Cart> cart = cartRepository.findById(cartId);
+        Optional<Experience> experience = experienceRepository.findById(experienceId);
+        for(int i = 0; i < cart.get().getExperienceList().size(); i++) {
+            if(experienceId.equals(cart.get().getExperienceList().get(i).getId())) {
+                cart.get().getExperienceList().remove(i);
+                experience.get().setTime(null);
+                experience.get().setCart(null);
+                experience.get().setCar(null);
+            }
+        }
+        experienceRepository.save(experience.get());
+        return cartRepository.save(cart.get());
+
+    }
 }

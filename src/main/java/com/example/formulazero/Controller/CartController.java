@@ -35,4 +35,15 @@ public class CartController {
     public Cart postCart(@PathVariable Long cartId, @PathVariable Long experienceId) {
         return cartService.postCart(cartId, experienceId);
     }
+
+    /**
+     * Finds a Cart by its ID and the experience the user is removing by its ID and removes the Experience from the Cart
+     * @param cartId The ID needed to find the correct Cart and its contents
+     * @param experienceId The ID needed to find the correct Experience
+     * @return A newly updated Cart with the Experience removed
+     */
+    @PostMapping(path = "/remove/{cartId}/{experienceId}/")
+    public Cart removeFromCart(@PathVariable Long cartId, @PathVariable Long experienceId) {
+        return cartService.removeItemFromCart(cartId, experienceId);
+    }
 }
